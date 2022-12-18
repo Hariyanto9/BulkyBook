@@ -38,6 +38,7 @@ namespace BulkyBookWeb.Controllers
             if (ModelState.IsValid)
             {
                 _db.Categories.Add(obj);
+                TempData["success"] = "successfully add category";
                 _db.SaveChanges();
 
                 //RedirectToAction: setelah submit dikembalikan ke halaman list category
@@ -74,6 +75,8 @@ namespace BulkyBookWeb.Controllers
             if (ModelState.IsValid)
             {
                 _db.Categories.Update(obj);
+                TempData["success"] = "successfully edit category";
+
                 _db.SaveChanges();
 
                 //RedirectToAction: setelah submit dikembalikan ke halaman list category
@@ -110,6 +113,8 @@ namespace BulkyBookWeb.Controllers
                 return NotFound();
             
             _db.Categories.Remove(categoryById);
+            TempData["success"] = "successfully delete category";
+
             _db.SaveChanges();
 
             return RedirectToAction("Index");

@@ -3,6 +3,15 @@
     ViewData["Title"] = "Category Page";
 }
 
+@*move to _Notification*@
+@*@if(TempData["success"] != null)
+{
+    <h2>@TempData["success"]</h2>
+}
+*@
+
+@*move to _Layout.cshtml agar bisa dipake untuk semua page*@
+@*<partial name="_Notification" />*@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
